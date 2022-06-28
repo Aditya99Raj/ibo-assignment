@@ -83,16 +83,22 @@ const getUniqueProductCount = (arr) => {
 
 
 let count = getUniqueProductCount(listOfProducts);
-console.log(count);
+//console.log(count);
 
 const getUniquePrducts = (arr) => {
-    const key = 'productName';
+    const obj = {};
+	arr.forEach((e) => {
+		if (obj[e.productName] == undefined) {
+			obj[e.productName] = e;
+		} else {
+			obj[e.productName].quantity += e.quantity;
+		}
+	});
 
-    const Unique = [...new Map(arr.map(item =>
-      [item[key], item])).values()];
-    
-    return(Unique);
+	return Object.values(obj);
 }
+
+
 
 
 let unique = getUniquePrducts(listOfProducts);
