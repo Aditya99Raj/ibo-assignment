@@ -86,11 +86,12 @@ let count = getUniqueProductCount(listOfProducts);
 console.log(count);
 
 const getUniquePrducts = (arr) => {
-    let res = [];
-    arr.forEach((e) => {
-        res.push(e)
-    })
-    return res;
+    const key = 'productName';
+
+    const Unique = [...new Map(arr.map(item =>
+      [item[key], item])).values()];
+    
+    return(Unique);
 }
 
 
