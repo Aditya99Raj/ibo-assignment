@@ -83,7 +83,7 @@ const getUniqueProductCount = (arr) => {
 
 
 let count = getUniqueProductCount(listOfProducts);
-//console.log(count);
+console.log(count);
 
 const getUniquePrducts = (arr) => {
     const obj = {};
